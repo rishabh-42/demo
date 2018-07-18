@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.jws.WebParam;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -41,6 +43,22 @@ public class controller {
         model.addAttribute("test","value");
     return model;
 
+    }
+
+
+    @RequestMapping("/get-list")
+    public ModelAndView getList()
+    {
+
+        List<String> list = new ArrayList<>();
+
+        list.add("Rishabh");
+        list.add("Rajput");
+
+        ModelAndView model = new ModelAndView("view");
+        model.addObject("list",list);
+
+        return model;
     }
 
 

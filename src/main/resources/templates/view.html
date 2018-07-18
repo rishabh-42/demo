@@ -4,5 +4,17 @@
 <p th:text="${welcome} ">Hello</p>
 <p th:text="${test} + ${t}+${test11}"></p>
 <p></p>
+
+
+
+
+
+<table>
+    <tr th:each="item:${list}">
+        <td th:text="${item}"></td>
+
+    </tr>
+
+</table>
 </body>
 </html>
