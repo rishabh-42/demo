@@ -1,9 +1,14 @@
 package com.example.spring.demo;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.jws.WebParam;
 
 
 @Controller
@@ -16,4 +21,29 @@ public class controller {
         return lastname;
 
     }
+
+
+
+    @RequestMapping("/get-view")
+    public ModelAndView getView()
+    {
+
+        ModelAndView model = new ModelAndView("view");
+        model.addObject("welcome","swagat hai");
+        return model;
+
+
+    }
+
+    @ModelAttribute
+    public Model addObject (Model model)
+    {
+        model.addAttribute("test","value");
+    return model;
+
+    }
+
+
+
+
 }
