@@ -12,5 +12,6 @@ public interface IRoleRepository extends CrudRepository<Details , Integer> {
     // Add your custom methods here
 
 
+    public Details findByUsername (String username);
 
 }

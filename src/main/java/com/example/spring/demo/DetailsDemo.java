@@ -1,6 +1,7 @@
 package com.example.spring.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -39,6 +40,13 @@ public class DetailsDemo {
     }
 
   //
+    @RequestMapping("/getByUsername/{name}")
+    public Details getName (@PathVariable String name)
+    {
+
+           return rolesService.findByUsername(name);
+
+    }
 
 
 

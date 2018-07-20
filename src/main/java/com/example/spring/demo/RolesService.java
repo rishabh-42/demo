@@ -37,4 +37,15 @@ public class RolesService
         iRoleRepository.save(details);
     }
 
+
+
+    //custom selct method implementation
+
+    public Details findByUsername (String username)
+    {
+        return  iRoleRepository.findByUsername(username);
+
+    }
+
+
 }
